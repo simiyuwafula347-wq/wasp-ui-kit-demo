@@ -1,0 +1,24 @@
+/* THEME: Chrono Gamer - early-2000s mechanical: bevels, title bars, LCD, click-down buttons */
+[data-theme=chrono]{
+  --bg:#0b8a92; --panel:#c0c0c0; --panel2:#d8d8d8; --ink:#101010; --dim:#4a4a4a; --accent:#000080; --accent2:#c42b2b; --line:#7a7a7a;
+  --radius:0px; --grain:0; --scan:.35;
+  --font-ui:Tahoma,Verdana,"Segoe UI",sans-serif; --font-head:Tahoma,Verdana,sans-serif; --shadow:none;
+}
+[data-theme=chrono] body{background:linear-gradient(180deg,#14a0a6,#05505e)}
+[data-theme=chrono] .card{border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf;padding-top:34px}
+[data-theme=chrono] .card h2{position:absolute;left:3px;right:3px;top:3px;margin:0;padding:3px 8px;color:#fff;background:linear-gradient(90deg,#000080,#1084d0);font-size:12px;letter-spacing:.05em}
+[data-theme=chrono] .btn,[data-theme=chrono] .chip,[data-theme=chrono] .nav button{background:#c0c0c0;border:2px solid;border-color:#fff #404040 #404040 #fff;border-radius:0;color:#101010;box-shadow:inset -1px -1px #808080}
+[data-theme=chrono] .btn:active,[data-theme=chrono] .chip:active,[data-theme=chrono] .nav button:active,[data-theme=chrono] .chip[aria-pressed=true]{border-color:#404040 #fff #fff #404040;box-shadow:inset 1px 1px #808080;transform:translateY(1px)}
+[data-theme=chrono] .btn--primary,[data-theme=chrono] .nav button[aria-current=page]{background:#000080;color:#fff;border-color:#8080ff #000040 #000040 #8080ff}
+[data-theme=chrono] .chip[aria-pressed=true]{background:#000080;color:#fff}
+[data-theme=chrono] .progress{height:16px;border:2px solid;border-color:#404040 #fff #fff #404040;background:#fff;border-radius:0} [data-theme=chrono] .progress i{background:repeating-linear-gradient(90deg,#000080 0 8px,#fff 8px 10px);box-shadow:none}
+[data-theme=chrono] .bars span{background:#18b04a;border-radius:0;outline:1px solid #0a5a24} [data-theme=chrono] .bars span:nth-child(3n){background:#e6d200}
+[data-theme=chrono] .bars{background:#000;padding:6px;border:2px solid;border-color:#404040 #fff #fff #404040}
+[data-theme=chrono] .tracks li.on{background:#000080;color:#fff;outline:0} [data-theme=chrono] .tracks li:hover{background:#d0d0ff;color:#000}
+[data-theme=chrono] .toggle span{border-radius:0;border:2px solid;border-color:#404040 #fff #fff #404040;background:#fff} [data-theme=chrono] .toggle span::after{border-radius:0;background:#808080}
+[data-theme=chrono] .toggle input:checked+span{background:#18b04a}
+[data-theme=chrono] .overlay{border:2px solid;border-color:#fff #404040 #404040 #fff;border-radius:0;background:#c0c0c0;box-shadow:4px 4px 0 rgba(0,0,0,.4)}
+[data-theme=chrono] .fab{border-radius:0;background:#c0c0c0;border:2px solid;border-color:#fff #404040 #404040 #fff}
+[data-theme=chrono] .time,[data-theme=chrono] .stat b{font-family:"Courier New",monospace}
+[data-theme=chrono] .nav{background:linear-gradient(transparent,#05505e 40%)}
+[data-theme=chrono] .toast{border-radius:0;background:#ffffe1;color:#000;border:1px solid #000}

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" data-theme="lofi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WASP UI Kit: demo</title>
+<link rel="stylesheet" href="src/base.css">
+<link rel="stylesheet" href="src/theme-lofi.css">
+<link rel="stylesheet" href="src/theme-chrono.css">
+<link rel="stylesheet" href="src/theme-wasp.css">
+</head>
+<body>
+<div class="fx-grain"></div><div class="fx-scan"></div>
+<div class="app">
+  <header class="topbar"><div class="brand">WASP UI Kit</div><div class="row" id="themes"></div></header>
+  <main>
+    <section class="view active" id="v-player"><div class="grid">
+      <div class="card c-now"><h2>Now playing</h2>
+        <div class="stage" id="stage" title="Poke it"></div>
+        <div class="title" id="title">Honey Static</div><div class="artist" id="artist">&nbsp;</div>
+        <div class="progress" id="prog" style="margin-top:12px"><i></i></div>
+        <div class="time"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+        <div class="row" style="justify-content:center;margin-top:10px">
+          <button class="btn" id="prev" aria-label="Previous track">⏮</button>
+          <button class="btn btn--primary btn--big" id="play" aria-label="Play or pause">▶</button>
+          <button class="btn" id="next" aria-label="Next track">⏭</button>
+        </div>
+      </div>
+      <div class="card c-viz"><h2>Spectrum</h2><div class="bars" id="bars"></div></div>
+      <div class="card c-list"><h2>Tracks</h2><ul class="tracks" id="tracks"></ul></div>
+      <div class="card c-stats"><h2>Stats</h2>
+        <div class="stat"><span>BPM</span><b id="sBpm">–</b></div>
+        <div class="stat"><span>Beats</span><b id="sBeats">0</b></div>
+        <div class="stat"><span>Source</span><b id="sSrc">Demo</b></div>
+      </div>
+    </div></section>
+    <section class="view" id="v-style"><div class="grid">
+      <div class="card c-theme"><h2>Motion</h2>
+        <label class="toggle"><input type="checkbox" id="calm"><span></span>Calm mode</label>
+        <p class="artist">Tap the mascot on the Player tab to poke it.</p>
+      </div>
+      <div class="card c-colors"><h2>Accent colors</h2>
+        <div class="swatches" id="swatches"></div>
+        <div class="row" style="margin-top:12px"><label class="artist" for="pick">Custom accent</label><input type="color" id="pick" value="#b6ff00"></div>
+      </div>
+    </div></section>
+  </main>
+</div>
+<nav class="nav"><button data-v="player" aria-current="page">Player</button><button data-v="style">Style</button></nav>
+<div class="overlay" id="ov">
+  <div class="grip"><span>Mixer</span><button class="chip" id="ovx" aria-label="Close mixer">✕</button></div>
+  <label class="artist" for="vol">Volume</label><input type="range" id="vol" min="0" max="1" step=".01" value=".8">
+  <label class="toggle"><input type="checkbox" id="mute"><span></span>Mute</label>
+  <label class="btn" style="display:block;text-align:center;margin-top:8px">Load your own audio<input type="file" id="file" accept="audio/*" class="sr"></label>
+</div>
+<button class="fab" id="fab" aria-label="Open mixer">🎚</button>
+<div class="toast" id="toast" role="status"></div>
+<script src="src/sprites.js"></script>
+<script src="src/beat.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

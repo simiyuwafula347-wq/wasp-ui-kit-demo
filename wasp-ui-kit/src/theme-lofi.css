@@ -1,0 +1,15 @@
+/* THEME: Lofi Record Cat - warm paper, soft round cards, a cat that nods to the beat */
+[data-theme=lofi]{
+  --bg:#2a1f1a; --panel:#3a2b24; --panel2:#46352c; --ink:#f6ead7; --dim:#c3a98f; --accent:#e8a05c; --accent2:#ff8f7a; --line:#5b463a;
+  --radius:22px; --grain:1; --scan:0; --cat:#d9a066; --ear:#f2b8a8;
+  --font-head:Georgia,"Iowan Old Style","Times New Roman",serif;
+  --shadow:0 10px 26px rgba(0,0,0,.38);
+}
+[data-theme=lofi] body{background:radial-gradient(120% 90% at 50% 0,#3a2b24,#241914)}
+[data-theme=lofi] .card{background:linear-gradient(180deg,#3d2d25,#35261f)}
+[data-theme=lofi] .btn,[data-theme=lofi] .chip,[data-theme=lofi] .nav button{border-radius:999px}
+[data-theme=lofi] .btn--primary{box-shadow:0 6px 0 #b9733a;transform:translateY(-3px)} [data-theme=lofi] .btn--primary:active{box-shadow:0 2px 0 #b9733a;transform:translateY(1px)}
+[data-theme=lofi] .progress{height:12px} [data-theme=lofi] .progress i{background:linear-gradient(90deg,#e8a05c,#ff8f7a)}
+[data-theme=lofi] .bars span{border-radius:999px;background:#e8a05c} [data-theme=lofi] .bars span:nth-child(3n){background:#ff8f7a}
+[data-theme=lofi] .title{font-style:italic}
+[data-theme=lofi] .stage::before{content:"";position:absolute;inset:8% 6%;border-radius:50%;background:radial-gradient(circle,rgba(232,160,92,.18),transparent 65%);transform:scale(calc(1 + var(--beat)*.08))}

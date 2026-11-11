@@ -1,0 +1,17 @@
+WASP UI Kit: Purchaser License
+Copyright (c) [YEAR] [YOUR NAME]
+
+You may, after purchasing this kit:
+- use it in personal and commercial projects, including client work;
+- modify the code, styles and artwork for those projects;
+- ship it inside websites and apps that end users access.
+
+You may not:
+- resell, share, sublicense or redistribute the kit, or a modified copy of it, as a template, theme, UI kit, asset pack or any other product where the kit is the main value;
+- publish the source files in a public repository or file-sharing site.
+
+One purchase covers one person. Teams need one purchase per member who works with the source files.
+
+The kit is provided "as is", without warranty of any kind. The author is not liable for any damages arising from its use.
+
+Questions: [YOUR EMAIL]
