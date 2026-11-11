@@ -91,7 +91,7 @@
   B.duration = function () { return B.mode === "file" && audio && isFinite(audio.duration) ? audio.duration : TRACKS[B.index].len; };
   B.seek = function (f) { const t = f * B.duration(); if (B.mode === "file" && audio) audio.currentTime = t; else { offset = t; if (B.playing && B.ctx) startedAt = B.ctx.currentTime - t; } };
   B.levels = function (n) { if (!analyser || !B.ctx || !B.playing) return null; analyser.getByteFrequencyData(bins); const out = [];
-    for (let i = 0; i < n; i++) { const a = Math.floor(Math.pow(i / n, 1.6) * 90), b = Math.max(a + 1, Math.floor(Math.pow((i + 1) / n, 1.6) * 90)); let s = 0; for (let k = a; k < b; k++) s += bins[k]; out.push(Math.min(1, s / (b - a) / 220)); } return out; };
+    for (let i = 0; i < n; i++) { const a = Math.floor(Math.pow(i / n, 1.6) * 90), b = Math.max(a + 1, Math.floor(Math.pow((i + 1) / n, 1.6) * 90)); let s = 0; for (let k = a; k < b; k++) s += bins[k]; out.push(Math.min(1, Math.pow(s / (b - a) / 255, 0.65) * (1 + i / n * 0.6))); } return out; };
   B.loadFile = function (file) {
     if (!file || !ensure()) return false;
     B.pause(true);
