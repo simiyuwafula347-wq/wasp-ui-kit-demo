@@ -90,8 +90,12 @@
   B.position = function () { if (B.mode === "file" && audio) return audio.currentTime; if (!B.ctx) return offset; return B.playing ? (B.ctx.currentTime - startedAt) % TRACKS[B.index].len : offset; };
   B.duration = function () { return B.mode === "file" && audio && isFinite(audio.duration) ? audio.duration : TRACKS[B.index].len; };
   B.seek = function (f) { const t = f * B.duration(); if (B.mode === "file" && audio) audio.currentTime = t; else { offset = t; if (B.playing && B.ctx) startedAt = B.ctx.currentTime - t; } };
-  B.levels = function (n) { if (!analyser || !B.ctx || !B.playing) return null; analyser.getByteFrequencyData(bins); const out = [];
-    for (let i = 0; i < n; i++) { const a = Math.floor(Math.pow(i / n, 1.6) * 90), b = Math.max(a + 1, Math.floor(Math.pow((i + 1) / n, 1.6) * 90)); let s = 0; for (let k = a; k < b; k++) s += bins[k]; out.push(Math.min(1, Math.pow(s / (b - a) / 255, 0.65) * (1 + i / n * 0.6))); } return out; };
+  let peak = 0.2;
+  B.levels = function (n) { if (!analyser || !B.ctx || !B.playing) return null; analyser.getByteFrequencyData(bins); const raw = []; let m = 0;
+    for (let i = 0; i < n; i++) { const a = Math.floor(Math.pow(i / n, 1.6) * 90), b = Math.max(a + 1, Math.floor(Math.pow((i + 1) / n, 1.6) * 90)); let s = 0; for (let k = a; k < b; k++) s += bins[k];
+      const v = Math.pow(s / (b - a) / 255, 0.65) * (1 + i / n); raw.push(v); if (v > m) m = v; }
+    peak = Math.max(m, peak * 0.996, 0.08);           // auto-gain: the loudest bar always reaches the top
+    return raw.map(v => Math.min(1, v / peak)); };
   B.loadFile = function (file) {
     if (!file || !ensure()) return false;
     B.pause(true);

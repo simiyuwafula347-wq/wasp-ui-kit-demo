@@ -83,3 +83,4 @@ body.calm *,body.calm *::before,body.calm *::after{animation-duration:.001s!impo
 /* fixes */
 .toggle{position:relative}
 .toggle input:checked+span{background:var(--accent)}
+.bars span{height:100%}
